@@ -1,0 +1,282 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bg: #f6f4f1;
+    --bg-warm: #ede9e3;
+    --bg-dark: #0a0a0a;
+    --text: #111111;
+    --text-muted: #6b6560;
+    --text-dark-muted: #8a8a8a;
+    --accent: #1e3a5f;
+    --accent-light: #2a4d73;
+    --accent-subtle: #e8eef4;
+    --border: #e0dbd5;
+    --border-dark: rgba(255,255,255,0.08);
+    --shadow: 0 32px 64px -16px rgba(0,0,0,0.12);
+    --shadow-sm: 0 4px 12px -2px rgba(0,0,0,0.06);
+    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--accent); color: white; }
+
+/* ========== UTILITY CLASSES ========== */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header { margin-bottom: 5rem; }
+.section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-title {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+    max-width: 600px;
+}
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.4s var(--ease);
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.02em;
+}
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+.btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 1rem 1.25rem;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    background: var(--bg);
+    color: var(--text);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.08);
+}
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.form-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+section { padding: 140px 0; position: relative; }
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-box {
+    background: white;
+    max-width: 520px;
+    width: 90%;
+    padding: 2.5rem 2rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    position: relative;
+    transform: scale(0.96);
+    transition: transform 0.25s ease;
+}
+.modal-overlay.active .modal-box {
+    transform: scale(1);
+}
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+.modal-close:hover { color: var(--text); }
+.modal-box h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+.modal-box .modal-sub {
+    color: var(--text-muted);
+    margin-bottom: 1.8rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+.modal-box .form-group {
+    margin-bottom: 1.2rem;
+}
+.modal-box .form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+.modal-box .form-group input,
+.modal-box .form-group select,
+.modal-box .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    background: var(--bg);
+    transition: 0.2s;
+}
+.modal-box .form-group input:focus,
+.modal-box .form-group select:focus,
+.modal-box .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(30,58,95,0.08);
+}
+.modal-box .btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+.modal-box .form-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .section-container { padding: 0 1.5rem; }
+}
+@media (max-width: 768px) {
+    section { padding: 100px 0; }
+    .section-container { padding: 0 1rem; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { padding: 0.8rem 1rem; }
+}

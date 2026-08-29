@@ -1,0 +1,59 @@
+.conversationsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+}
+.conversationCard {
+    padding: 3.5rem 3rem;
+    transition: all 0.5s var(--ease);
+    position: relative;
+    cursor: default;
+    background: transparent;
+}
+.conversationCard:nth-child(1),
+.conversationCard:nth-child(2) {
+    border-bottom: 1px solid var(--border);
+}
+.conversationCard:nth-child(1),
+.conversationCard:nth-child(3) {
+    border-right: 1px solid var(--border);
+}
+.conversationCard:nth-child(3) {
+    border-bottom: 1px solid var(--border);
+}
+.conversationCard.spanFull {
+    grid-column: span 2;
+    border-right: none;
+}
+.conversationCard h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    transition: color 0.4s;
+}
+.conversationCard p {
+    color: var(--text-muted);
+    line-height: 1.75;
+    font-size: 0.95rem;
+    transition: color 0.4s;
+}
+.conversationCard:hover {
+    background: white;
+}
+.conversationCard:hover h3 { color: var(--accent); }
+.conversationCard:hover p { color: var(--text); }
+@media (max-width: 1024px) {
+    .conversationsGrid { grid-template-columns: 1fr; }
+    .conversationCard:nth-child(1),
+    .conversationCard:nth-child(2),
+    .conversationCard:nth-child(3) {
+        border-bottom: 1px solid var(--border);
+        border-right: none;
+    }
+    .conversationCard.spanFull { grid-column: span 1; border-bottom: 1px solid var(--border); }
+}
+@media (max-width: 768px) {
+    .conversationCard { padding: 2.5rem 1.5rem; }
+}
