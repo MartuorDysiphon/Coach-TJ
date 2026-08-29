@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: 'Website Form <onboarding@resend.dev>', // Keep this default for Resend free tier
-        to: 'katlegojohnson@gmail.com',         // CHANGE THIS to your actual email address
+        to: 'katlegojohnson30@gmail.com',         // CHANGE THIS to your actual email address
         subject: emailSubject,
         html: `
           <h3>Form Type: ${formType ? formType.toUpperCase() : 'Not Specified'}</h3>
