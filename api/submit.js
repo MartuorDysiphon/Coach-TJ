@@ -16,12 +16,12 @@ export default async function handler(req, res) {
   if (formType === 'Group Mentorship') emailSubject = 'New 12-Month Academy Application';
   if (formType === 'Private One on One') emailSubject = 'New One-on-One Mentorship Enquiry';
   if (formType === 'Keynote Speaking') emailSubject = 'New Keynote Speaking Request';
-  if (formType === 'speaking') emailSubject = 'Book Me Enquiry'; // Matches your Speaking.jsx component string
+  if (formType === 'speaking') emailSubject = 'Book Me Enquiry'; 
 
 
   try {
     // 3. Post to Resend API using standard global fetch
-    const response = await fetch('https://resend.com', {
+    const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
