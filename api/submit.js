@@ -26,7 +26,7 @@ export default async function handler(req, res) {
           'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: 'Website Form <onboarding@resend.dev>', 
+          from: 'onboarding@resend.dev', 
           to: 'katlegojohnson30@gmail.com',         
           subject: emailSubject,
           html: `
