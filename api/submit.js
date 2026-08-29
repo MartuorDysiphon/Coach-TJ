@@ -1,5 +1,4 @@
 export default async function handler(req, res) {
-    // 1. Enforce POST requests
     if (req.method !== 'POST') {
       return res.status(405).json({ error: 'Method not allowed' });
     }
@@ -11,11 +10,11 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Email and message are required.' });
     }
   
-    // 2. change the email subject based on which form was submitted
+    // 2. Email subject on Submitted Form
     let emailSubject = 'New Website Form Submission';
-    if (formType === 'group') emailSubject = 'New 12-Month Academy Application';
-    if (formType === 'oneonone') emailSubject = 'New One-on-One Mentorship Enquiry';
-    if (formType === 'keynote') emailSubject = 'New Keynote Speaking Request';
+    if (formType === 'Group Mentorship') emailSubject = 'New 12-Month Academy Application';
+    if (formType === 'Private One on One') emailSubject = 'New One-on-One Mentorship Enquiry';
+    if (formType === 'Keynote Speaking') emailSubject = 'New Keynote Speaking Request';
   
     try {
       // 3. Post to Resend API using standard global fetch
@@ -27,7 +26,7 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           from: 'onboarding@resend.dev', 
-          to: 'katlegojohnson30@gmail.com',         
+          to: 'katlegomorwamohube@protonmail.com',         
           subject: emailSubject,
           html: `
             <h3>Form Type: ${formType ? formType.toUpperCase() : 'Not Specified'}</h3>
