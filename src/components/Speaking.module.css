@@ -154,11 +154,103 @@
     align-items: center;
     gap: 0.5rem;
 }
-@media (max-width: 1024px) {
-    .speakingGrid { grid-template-columns: 1fr; gap: 3rem; }
-    .speakingImage img { height: 400px; }
+
+/* ULTRA-WIDE (1536px+) */
+@media (min-width: 1536px) {
+    .speakingGrid { gap: 6rem; }
+    .speakingContent p { font-size: 1.2rem; }
+    .speakingImage img { height: 600px; }
+    .bookingForm { padding: 4rem; }
 }
-@media (max-width: 768px) {
-    .bookingForm { padding: 2rem; }
-    .bookingForm :global(.form-grid) { grid-template-columns: 1fr; }
+
+/* LAPTOP (1024-1279px) */
+@media (max-width: 1279px) and (min-width: 1024px) {
+    .speakingGrid { gap: 3.5rem; }
+    .speakingContent p { font-size: 1rem; }
+    .speakingImage img { height: 420px; }
+    .bookingForm { padding: 2.5rem; }
+}
+
+/* TABLET PORTRAIT (768-1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .speakingGrid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .speakingImage img { height: 380px; }
+    .bookingForm { padding: 2.5rem; margin-top: 3rem; }
+    .bookingForm :global(.form-grid) { grid-template-columns: 1fr 1fr; }
+}
+
+/* LARGE MOBILE (640-767px) */
+@media (max-width: 767px) and (min-width: 640px) {
+    .speakingGrid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .speakingContent p { font-size: 0.95rem; }
+    .speakingImage img { height: 320px; }
+    .bookingForm { padding: 2rem; margin-top: 2.5rem; }
+    .bookingForm :global(.form-grid) { grid-template-columns: 1fr; gap: 1rem; }
+    .bookingForm h3 { font-size: 1.2rem; }
+}
+
+/* STANDARD MOBILE (376-639px) */
+@media (max-width: 639px) and (min-width: 376px) {
+    .speakingGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .speakingContent p { font-size: 0.9rem; line-height: 1.6; }
+    .speakingTypes { gap: 0.5rem; margin: 1.5rem 0; }
+    .speakingType { padding: 1rem; }
+    .speakingType strong { font-size: 0.9rem; }
+    .speakingType p { font-size: 0.8rem; }
+    .speakingImage img { height: 250px; }
+    .bookingForm { padding: 1.5rem; margin-top: 2rem; }
+    .bookingForm :global(.form-grid) { grid-template-columns: 1fr; gap: 0.75rem; }
+    .bookingForm h3 { font-size: 1.1rem; }
+    .bookingForm :global(.form-group input),
+    .bookingForm :global(.form-group select),
+    .bookingForm :global(.form-group textarea) {
+        padding: 0.7rem 0.85rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* MICRO MOBILE (0-375px) */
+@media (max-width: 375px) {
+    .speakingGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .speakingContent p { font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem; }
+    .speakingTypes { gap: 0.4rem; margin: 1rem 0; }
+    .speakingType { padding: 0.75rem; gap: 0.75rem; }
+    .speakingType strong { font-size: 0.85rem; }
+    .speakingType p { font-size: 0.75rem; }
+    .speakingImage img { height: 200px; }
+    .bookingForm { padding: 1.25rem; margin-top: 1.5rem; }
+    .bookingForm :global(.form-grid) { grid-template-columns: 1fr; gap: 0.6rem; }
+    .bookingForm h3 { font-size: 1rem; }
+    .bookingForm :global(.form-group label) { font-size: 0.65rem; }
+    .bookingForm :global(.form-group input),
+    .bookingForm :global(.form-group select),
+    .bookingForm :global(.form-group textarea) {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* EXTRA SMALL (320px-) */
+@media (max-width: 320px) {
+    .speakingImage img { height: 160px; }
+    .bookingForm { padding: 1rem; }
+    .bookingForm h3 { font-size: 0.9rem; }
+    .bookingForm :global(.form-group input),
+    .bookingForm :global(.form-group select),
+    .bookingForm :global(.form-group textarea) {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.75rem;
+    }
 }

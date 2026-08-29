@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -13,7 +12,6 @@ import Modals from './components/Modals';
 
 function App() {
   useEffect(() => {
-    // Re-run lucide icons after mount
     if (window.lucide) {
       window.lucide.createIcons();
     }
@@ -34,7 +32,6 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  // Smooth anchor scroll
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
