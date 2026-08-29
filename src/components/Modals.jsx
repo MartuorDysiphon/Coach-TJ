@@ -103,7 +103,7 @@ const Modals = () => {
         <div className={styles.modalBox}>
           <button className={styles.modalClose} onClick={() => handleManualClose('modal-group')}>&times;</button>
           <h3>Join the 12-Month Academy</h3>
-          <div className={styles.modalSub}>R750 / month — start your transformation today</div>
+          <div className={styles.modalSub}>R750 / month | Start your transformation today</div>
           
           {successType === 'group' ? (
             <div style={{ textAlign: 'center', padding: '2rem 0', color: 'green', fontWeight: 'bold' }}>
@@ -129,7 +129,7 @@ const Modals = () => {
         <div className={styles.modalBox}>
           <button className={styles.modalClose} onClick={() => handleManualClose('modal-oneonone')}>&times;</button>
           <h3>One-on-One Mentorship</h3>
-          <div className={styles.modalSub}>R1,800 per 90 min session — personalised guidance</div>
+          <div className={styles.modalSub}>R1,800 per 90 min session | Personalised guidance</div>
           
           {successType === 'oneonone' ? (
             <div style={{ textAlign: 'center', padding: '2rem 0', color: 'green', fontWeight: 'bold' }}>
@@ -155,7 +155,7 @@ const Modals = () => {
         <div className={styles.modalBox}>
           <button className={styles.modalClose} onClick={() => handleManualClose('modal-keynote')}>&times;</button>
           <h3>Book a Keynote</h3>
-          <div className={styles.modalSub}>R15,000 per keynote — inspire your audience</div>
+          <div className={styles.modalSub}>R15,000 per keynote | Inspire your audience</div>
           
           {successType === 'keynote' ? (
             <div style={{ textAlign: 'center', padding: '2rem 0', color: 'green', fontWeight: 'bold' }}>

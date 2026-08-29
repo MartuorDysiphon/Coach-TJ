@@ -8,7 +8,7 @@ const Services = () => {
         <div className="section-header fade-in">
           <p className="section-label">Made to Win Academy</p>
           <h2 className="section-title">Mentorship That Transforms</h2>
-          <p className="section-subtitle">Two powerful tracks designed to help you master abundance, mindset, and financial discipline — all within a community of winners.</p>
+          <p className="section-subtitle">Two powerful tracks designed to help you master abundance, mindset, and financial discipline. All within a community of winners.</p>
         </div>
 
         <div className={styles.servicesGrid}>
