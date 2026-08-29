@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           from: 'onboarding@resend.dev', 
-          to: 'katlegomorwamohube@protonmail.com',         
+          to: 'katlegojohnson30@gmail.com',         
           subject: emailSubject,
           html: `
             <h3>Form Type: ${formType ? formType.toUpperCase() : 'Not Specified'}</h3>
