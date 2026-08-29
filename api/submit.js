@@ -1,4 +1,3 @@
-// api/submit.js
 export default async function handler(req, res) {
   // 1. Enforce POST requests
   if (req.method !== 'POST') {
@@ -7,12 +6,12 @@ export default async function handler(req, res) {
 
   const { formType, name, email, phone, message } = req.body;
 
-  // Simple required validation
+  // required validation
   if (!email || !message) {
     return res.status(400).json({ error: 'Email and message are required.' });
   }
 
-  // 2. Dynamically change the email subject based on which form was submitted
+  // 2. change the email subject based on which form was submitted
   let emailSubject = 'New Website Form Submission';
   if (formType === 'group') emailSubject = 'New 12-Month Academy Application';
   if (formType === 'oneonone') emailSubject = 'New One-on-One Mentorship Enquiry';
