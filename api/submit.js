@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   
     try {
       // 3. Post to Resend API using standard global fetch
-      const response = await fetch('https://resend.com', {
+      const response = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
