@@ -93,8 +93,9 @@
     .bioGrid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .bioImage {
+    .bioImage img {
         max-width: 600px;
+        height: 650px;
         margin: 0 auto;
     }
 }
