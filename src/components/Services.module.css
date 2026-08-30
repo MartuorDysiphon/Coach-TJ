@@ -48,7 +48,7 @@
 }
 .badge {
     display: flex;
-    background-color: #bbd3ff;
+    background-color: #000000;
     border-radius: 20px;
     width: fit-content;
     color: #fff;
