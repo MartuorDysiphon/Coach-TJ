@@ -96,7 +96,7 @@ body {
 }
 .btn-secondary {
     background: transparent;
-    color: var(--text);
+    color: var(--accent);
     border-color: var(--border);
 }
 .btn-secondary:hover {

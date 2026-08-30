@@ -45,9 +45,7 @@
 .conversationCard:hover h3 { color: var(--accent); }
 .conversationCard:hover p { color: var(--text); }
 
-/* ============================================ */
 /* ULTRA-WIDE SCREEN (1536px and up) */
-/* ============================================ */
 @media (min-width: 1536px) {
     .conversationsGrid { margin-top: 5rem; }
     .conversationCard { padding: 4.5rem 4rem; }
@@ -55,18 +53,14 @@
     .conversationCard p { font-size: 1.1rem; line-height: 1.8; }
 }
 
-/* ============================================ */
 /* DESKTOP MONITOR (1280px - 1535px) */
-/* ============================================ */
 @media (max-width: 1535px) and (min-width: 1280px) {
     .conversationCard { padding: 3.5rem 3rem; }
     .conversationCard h3 { font-size: 1.5rem; }
     .conversationCard p { font-size: 0.95rem; }
 }
 
-/* ============================================ */
 /* LAPTOP / TABLET LANDSCAPE (1024px - 1279px) */
-/* ============================================ */
 @media (max-width: 1279px) and (min-width: 1024px) {
     .conversationsGrid { margin-top: 3.5rem; }
     .conversationCard { padding: 2.8rem 2.2rem; }
@@ -74,9 +68,7 @@
     .conversationCard p { font-size: 0.9rem; line-height: 1.6; }
 }
 
-/* ============================================ */
 /* TABLET PORTRAIT (768px - 1023px) */
-/* ============================================ */
 @media (max-width: 1023px) and (min-width: 768px) {
     .conversationsGrid { 
         grid-template-columns: repeat(2, 1fr);
@@ -104,9 +96,7 @@
     .conversationCard p { font-size: 0.85rem; line-height: 1.6; }
 }
 
-/* ============================================ */
 /* LARGE MOBILE / LANDSCAPE (640px - 767px) */
-/* ============================================ */
 @media (max-width: 767px) and (min-width: 640px) {
     .conversationsGrid { 
         grid-template-columns: repeat(2, 1fr);
@@ -140,9 +130,7 @@
     }
 }
 
-/* ============================================ */
 /* STANDARD MOBILE (376px - 639px) */
-/* ============================================ */
 @media (max-width: 639px) and (min-width: 376px) {
     .conversationsGrid { 
         grid-template-columns: repeat(2, 1fr);
@@ -183,9 +171,7 @@
     .conversationCard:hover p { color: var(--text-muted); }
 }
 
-/* ============================================ */
 /* MICRO MOBILE / BASE (0px - 375px) */
-/* ============================================ */
 @media (max-width: 375px) {
     .conversationsGrid { 
         grid-template-columns: repeat(2, 1fr);
@@ -226,9 +212,7 @@
     .conversationCard:hover p { color: var(--text-muted); }
 }
 
-/* ============================================ */
 /* EXTRA SMALL (320px and below) */
-/* ============================================ */
 @media (max-width: 320px) {
     .conversationsGrid { 
         grid-template-columns: repeat(2, 1fr);

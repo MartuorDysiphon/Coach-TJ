@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styles from './Modals.module.css';
 
 const Modals = () => {
-  // State tracking variables for submission feedback
   const [submitting, setSubmitting] = useState(false);
   const [successType, setSuccessType] = useState(null); // Track which form succeeded
 
   useEffect(() => {
-    // Modal window controls
     const openModal = (modalId) => {
       const modal = document.getElementById(modalId);
       if (modal) {
@@ -21,12 +19,10 @@ const Modals = () => {
       if (modal) {
         modal.classList.remove('active');
         document.body.style.overflow = '';
-        // Reset success state when closing the modal
         setSuccessType(null);
       }
     };
 
-    // Global trigger bindings 
     document.querySelectorAll('.open-modal').forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -35,7 +31,6 @@ const Modals = () => {
       });
     });
 
-    // Handle background overlays
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
       overlay.addEventListener('click', function(e) {
         if (e.target === this) {
@@ -58,15 +53,13 @@ const Modals = () => {
     };
   }, []);
 
-  // Central React handler replacing direct HTML action redirects
   const handleSubmit = async (e, formType) => {
     e.preventDefault();
     setSubmitting(true);
 
     const formData = new FormData(e.target);
-    // Convert FormData payload into a basic JSON payload
     const payload = Object.fromEntries(formData.entries());
-    payload.formType = formType; // Append form context flag
+    payload.formType = formType; 
 
     try {
       const response = await fetch('/api/submit', {
@@ -77,7 +70,7 @@ const Modals = () => {
 
       if (response.ok) {
         setSuccessType(formType);
-        e.target.reset(); // Wipe inputs
+        e.target.reset(); 
       } else {
         alert('Something went wrong. Please check your form and try again.');
       }
@@ -89,7 +82,6 @@ const Modals = () => {
     }
   };
 
-  // Shared close logic
   const handleManualClose = (modalId) => {
     document.getElementById(modalId).classList.remove('active');
     document.body.style.overflow = '';

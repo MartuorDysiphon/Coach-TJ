@@ -10,7 +10,7 @@
     border-radius: 2px;
     box-shadow: var(--shadow-sm);
     transition: all 0.3s var(--ease);
-    border: 1px solid var(--border);
+    border-radius: 40px;
     height: 100%;
 }
 .serviceCard:hover {
@@ -47,15 +47,16 @@
     margin-top: 0.2rem;
 }
 .badge {
-    display: inline-block;
-    background: var(--accent-subtle);
-    color: var(--accent);
+    display: flex;
+    background-color: #bbd3ff;
+    border-radius: 20px;
+    width: fit-content;
+    color: #fff;
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     padding: 0.3rem 1rem;
-    border-radius: 20px;
     margin-bottom: 0.75rem;
 }
 .speakingFee {
